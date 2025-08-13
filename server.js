@@ -10,11 +10,7 @@ const eventsRoutes = require("./routes/events");
 const app = express();
 
 app.use(
-  cors({
-    origin: ["https://gloria-hyav.onrender.com/"],
-   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+  cors());
 
 app.options('*', cors()); 
 const PORT = parseInt(process.env.PORT, 10) || 5000;
