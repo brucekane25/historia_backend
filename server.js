@@ -12,10 +12,9 @@ const app = express();
 app.use(
   cors({
     origin: ["https://gloria-hyav.onrender.com/"],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true,
-  })
-);
+   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 app.options('*', cors()); 
 const PORT = parseInt(process.env.PORT, 10) || 5000;
