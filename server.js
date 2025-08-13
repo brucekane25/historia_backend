@@ -9,18 +9,20 @@ const eventsRoutes = require("./routes/events");
 
 const app = express();
 
+app.use(
+  cors({
+    origin: ["https://gloria-hyav.onrender.com/"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+);
+
+app.options('*', cors()); 
 const PORT = parseInt(process.env.PORT, 10) || 5000;
 
 // console.log(source);
 
 // Middleware
-app.use(
-  cors({
-    origin: ["https://gloria-hyav.onrender.com/"], // exact frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true,
-  })
-);
 app.use(express.json());
 
 // Routes
